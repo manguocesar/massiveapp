@@ -99,7 +99,7 @@ const BookOverview = async ({
             <BookCover
               variant="wide"
               coverColor={coverColor}
-              coverImage={coverUrl}
+              coverImage='https://m.media-amazon.com/images/I/81F90H7hnML.jpg'
             />
           </div>
         </div>

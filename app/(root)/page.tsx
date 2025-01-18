@@ -24,9 +24,9 @@ const Home = async () => {
 
       <BookList
          title="Latest Books"
-        //  books={latestBooks.slice(1)}
-        //  books={sampleBooks}
-        // containerClassName="mt-28"
+          // books={latestBooks.slice(1)}
+          books={sampleBooks}
+         containerClassName="mt-28"
       />
     </>
   );
