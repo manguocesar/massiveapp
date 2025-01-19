@@ -3,12 +3,12 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import BookCover from "./BookCover";
 // import BorrowBook from "@/components/BorrowBook";
-// import { db } from "@/database/drizzle";
-// import { users } from "@/database/schema";
-// import { eq } from "drizzle-orm";
+import { db } from "@/database/drizzle";
+import { users } from "@/database/schema";
+import { eq } from "drizzle-orm";
 
  interface Props extends Book {
-   userId: number;
+   userId: string;
  }
 const BookOverview = async ({
   title,

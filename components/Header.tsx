@@ -2,12 +2,17 @@
 
 import Link from "next/link";
 import Image from "next/image";
-// import { signOut } from "@/auth";
+import { signOut } from "@/auth";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+import { cn, getInitials } from "@/lib/utils";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Session } from "next-auth";
 
-const Header = () => {
+const Header = ({ session }: { session: Session }) => {
     const pathname = usePathname()
+
+    console.log(session);
+
 
     return (
         // hydration error means the browser changed the HTML before the js was loaded
@@ -22,6 +27,15 @@ const Header = () => {
                         ? 'text-light-200' : "text-light-100"
                     )}>
                         Library
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/my-profile'>
+                        <Avatar>
+                            <AvatarFallback className="bg-amber-100 text-black">
+                                {getInitials(session?.user?.name ?? "IN")}
+                            </AvatarFallback>
+                        </Avatar>
                     </Link>
                 </li>
             </ul>

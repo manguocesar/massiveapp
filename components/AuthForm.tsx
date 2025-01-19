@@ -20,19 +20,22 @@ import { Input } from "@/components/ui/input"
 import Link from 'next/link';
 import { FIELD_NAMES, FIELD_TYPES } from '@/constants';
 import FileUpload from './FileUpload';
+import { toast } from '@/hooks/use-toast';
+import { useRouter } from 'next/navigation';
 
 //T is a generic type that extends FieldValues -- default value  we are putting into the function
 interface Props<T extends FieldValues> {
   schema: ZodType<T>,
   defaultValues: DefaultValues<T>,
-  // onSubmit: (data: T) => Promise<{ success: boolean, error?: string }>
+  onSubmit: (data: T) => Promise<{ success: boolean, error?: string }>
   type: 'SIGN_IN' | 'SIGN_UP'
 }
 
-const AuthForm = <T extends FieldValues>({ type, schema, defaultValues,
-  //  onSubmit
-   }: Props<T>) => {
 
+const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
+}: Props<T>) => {
+
+  const router = useRouter()
   const isSignIn = type === 'SIGN_IN'
 
   const form: UseFormReturn<T> = useForm({
@@ -40,7 +43,24 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues,
     defaultValues: defaultValues as DefaultValues<T>
   })
 
-  const handleSubmit: SubmitHandler<T> = async (data) => { }
+  const handleSubmit: SubmitHandler<T> = async (data) => {
+    const result = await onSubmit(data)
+    if (result.success) {
+      toast({
+        title: 'Success',
+        description: isSignIn ? 'You have successfully sign in' : 'You have successfully signed up',
+      })
+      router.push('/')
+    } else{
+      toast({
+        title: `Error  ${isSignIn ? 'signing in' : 'signing up'}`,
+        description: result.error ?? 'An error occurred',
+        variant: 'destructive'
+    })
+  }
+  }
+
+
 
   return (
 
