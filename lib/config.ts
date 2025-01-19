@@ -1,3 +1,5 @@
+//adding a ! to the end of the variable name tells TypeScript that the variable is defined and not null
+
 const config = {
     env: {
       apiEndpoint: process.env.NEXT_PUBLIC_API_ENDPOINT!,
