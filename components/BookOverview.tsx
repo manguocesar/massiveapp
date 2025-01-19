@@ -2,15 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import BookCover from "./BookCover";
-// import BookCover from "@/components/BookCover";
 // import BorrowBook from "@/components/BorrowBook";
 // import { db } from "@/database/drizzle";
 // import { users } from "@/database/schema";
 // import { eq } from "drizzle-orm";
 
-// interface Props extends Book {
-//   userId: string;
-// }
+ interface Props extends Book {
+   userId: number;
+ }
 const BookOverview = async ({
   title,
   author,
@@ -23,7 +22,7 @@ const BookOverview = async ({
   coverUrl,
   id,
   userId,
-}: Book) => {
+}: Props) => {
 //   const [user] = await db
 //     .select()
 //     .from(users)
@@ -43,7 +42,6 @@ const BookOverview = async ({
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
         <h1>{title}</h1>
-
         <div className="book-info">
           <p>
             By <span className="font-semibold text-light-200">{author}</span>
@@ -99,7 +97,8 @@ const BookOverview = async ({
             <BookCover
               variant="wide"
               coverColor={coverColor}
-              coverImage='https://m.media-amazon.com/images/I/81F90H7hnML.jpg'
+              coverImage={coverUrl}
+              // coverImage='https://m.media-amazon.com/images/I/81F90H7hnML.jpg'  2nd book in the list
             />
           </div>
         </div>

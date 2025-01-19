@@ -13,7 +13,7 @@ const BookCard = ({
   coverUrl,
   isLoanedBook = false,
 }: Book) => (
-  <li className={cn(isLoanedBook && "xs:w-52 w-full")}>
+  <li className={ cn("hover:opacity-70", isLoanedBook && "xs:w-52 w-full")}>
     <Link
       href={`/books/${id}`}
       className={cn(isLoanedBook && "w-full flex flex-col items-center")}

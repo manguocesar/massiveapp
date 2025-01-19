@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 // import { signOut } from "@/auth";
-import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +15,6 @@ const Header = () => {
             <Link href="/">
                 <Image src="./icons/logo.svg" alt="logo" width={40} height={40} />
             </Link>
-
             <ul className="flex flex-row items-center gap-8">
                 <li>
                     <Link href={"/library"} className={cn(
