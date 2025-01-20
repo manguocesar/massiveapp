@@ -36,8 +36,8 @@ export const sendEmail = async ({
       from: "Cesar Hertz <info@cesarhertz.com>",
       to: [email],
       subject,
-      WelcomeEmail,
-      // html: message,
+      // WelcomeEmail,
+      html: message,
     },
   });
 };
