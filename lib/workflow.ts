@@ -1,6 +1,8 @@
 import { Client as WorkflowClient } from "@upstash/workflow";
 import { Client as QStashClient, resend } from "@upstash/qstash";
 import config from "@/lib/config";
+import WelcomeEmail from "@/components/Email";
+
 
 export const workflowClient = new WorkflowClient({
   baseUrl: config.env.upstash.qstashUrl,
@@ -10,6 +12,11 @@ export const workflowClient = new WorkflowClient({
 const qstashClient = new QStashClient({
   token: config.env.upstash.qstashToken,
 });
+
+
+
+
+
 
 export const sendEmail = async ({
   email,
@@ -29,8 +36,8 @@ export const sendEmail = async ({
       from: "Cesar Hertz <info@cesarhertz.com>",
       to: [email],
       subject,
-      html: message,
+      WelcomeEmail,
+      // html: message,
     },
   });
 };
-
