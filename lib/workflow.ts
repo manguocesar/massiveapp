@@ -26,10 +26,11 @@ export const sendEmail = async ({
       provider: resend({ token: config.env.resendToken }),
     },
     body: {
-      from: "JS Mastery <contact@adrianjsmastery.com>",
+      from: "Cesar Hertz <cesar.hertz@icloud.com>",
       to: [email],
       subject,
       html: message,
     },
   });
 };
+

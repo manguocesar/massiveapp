@@ -8,9 +8,9 @@ import { hash } from "bcryptjs";
 import { signIn } from "@/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-// import { workflowClient } from "@/lib/workflow";
 import config from "@/lib/config";
 import ratelimit from "../ratelimit";
+import { workflowClient } from "../workflow";
 
 export const signInWithCredentials = async (
     // Pick is a utility type that allows you to create a new type by picking the properties from an existing type.
@@ -72,13 +72,13 @@ export const signUp = async (params: AuthCredentials) => {
       universityCard,
     });
 
-    // await workflowClient.trigger({
-    //   url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
-    //   body: {
-    //     email,
-    //     fullName,
-    //   },
-    // });
+    await workflowClient.trigger({
+      url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
+      body: {
+        email,
+        fullName,
+      },
+    });
 
     await signInWithCredentials({ email, password });
 
