@@ -32,8 +32,8 @@ export const sendEmail = async ({
       to: [email],
       subject,
       // react: WelcomeEmail({ username: "Cesar", company: "何赛" }),
-      react: BasicEmail(),
-      // html: message,
+      // react: BasicEmail(),
+      html: message,
     },
   });
 };
