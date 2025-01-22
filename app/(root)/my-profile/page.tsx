@@ -10,7 +10,7 @@ const Page = () => {
         <form className='mb-10' action={async () => {
             'use server';
             await signOut();
-            // redirect("/sign-in");
+            redirect("/sign-in");
         }
         }>
             <Button>

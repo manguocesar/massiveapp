@@ -1,16 +1,14 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { resolve } from 'path';
 import React from 'react'
 import { DefaultValues, FieldValues, Path, SubmitHandler, useForm, UseFormReturn } from 'react-hook-form';
-import { z, ZodType } from 'zod';
+import { ZodType } from 'zod';
 
 import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -51,13 +49,13 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
         description: isSignIn ? 'You have successfully sign in' : 'You have successfully signed up',
       })
       router.push('/')
-    } else{
+    } else {
       toast({
         title: `Error  ${isSignIn ? 'signing in' : 'signing up'}`,
         description: result.error ?? 'An error occurred',
         variant: 'destructive'
-    })
-  }
+      })
+    }
   }
 
 

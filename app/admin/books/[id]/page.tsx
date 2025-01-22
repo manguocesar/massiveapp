@@ -1,3 +1,4 @@
+import React from "react";
 
 async function Page({ params }: {
   params: Promise<{ id: string }>;

@@ -1,3 +1,5 @@
+import React from "react";
+
 const BookCoverSvg = ({ coverColor }: { coverColor: string }) => {
     return (
       <svg

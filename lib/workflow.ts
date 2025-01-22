@@ -1,8 +1,8 @@
 import { Client as WorkflowClient } from "@upstash/workflow";
 import { Client as QStashClient, resend } from "@upstash/qstash";
 import config from "@/lib/config";
-import WelcomeEmail from "@/emails/WelcomeEmail";
-import BasicEmail from "@/emails/BasicEmail";
+// import WelcomeEmail from "@/emails/WelcomeEmail";
+// import BasicEmail from "@/emails/BasicEmail";
 
 export const workflowClient = new WorkflowClient({
   baseUrl: config.env.upstash.qstashUrl,

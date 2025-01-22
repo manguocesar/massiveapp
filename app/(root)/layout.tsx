@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation';
 import { after } from 'next/server';
 import { ReactNode } from 'react'
 import { users } from "@/database/schema";
+import React from "react";
 
 async function Layout({ children }: { children: ReactNode }) {
     const session = await auth();

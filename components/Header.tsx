@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
+import React from "react"
 
 const Header = () => {
   return (

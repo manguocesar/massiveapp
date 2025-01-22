@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "./ui/button";
 import BookCover from "./BookCover";
 import BorrowBook from "@/components/BorrowBook";
 import { db } from "@/database/drizzle";

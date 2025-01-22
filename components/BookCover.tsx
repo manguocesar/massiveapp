@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import BookCoverSvg from "@/components/BookCoverSvg";
 import { IKImage } from "imagekitio-next";
 import config from "@/lib/config";
-import Image from "next/image";
 
 type BookCoverVariant = "extraSmall" | "small" | "medium" | "regular" | "wide";
 

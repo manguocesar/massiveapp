@@ -44,7 +44,6 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
           </section>
         </div>
 
-        {/*  SIMILAR*/}
       </div>
     </>
   );

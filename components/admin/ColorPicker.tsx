@@ -1,4 +1,5 @@
 import { HexColorInput, HexColorPicker } from "react-colorful";
+import React from "react"
 
 interface Props {
   value?: string;

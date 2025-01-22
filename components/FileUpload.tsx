@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react"
 import { IKImage, ImageKitProvider, IKUpload, IKVideo } from "imagekitio-next";
 import config from "@/lib/config";
 import { useRef, useState } from "react";
@@ -30,8 +30,8 @@ const authenticator = async () => {
     const { signature, expire, token } = data;
 
     return { token, expire, signature };
-  } catch (error: any) {
-    throw new Error(`Authentication request failed: ${error.message}`);
+  } catch (error) {
+    throw new Error(`Authentication request failed: ${(error as Error).message}`);
   }
 };
 
@@ -54,7 +54,7 @@ const FileUpload = ({
   onFileChange,
   value,
 }: Props) => {
-  const ikUploadRef = useRef(null);
+  const ikUploadRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<{ filePath: string | null }>({
     filePath: value ?? null,
   });
@@ -69,8 +69,12 @@ const FileUpload = ({
     text: variant === "dark" ? "text-light-100" : "text-dark-400",
   };
 
-  const onError = (error: any) => {
-    console.log(error);
+  interface ErrorResponse {
+    message: string;
+  }
+
+  const onError = (error: ErrorResponse) => {
+    console.log(error.message);
 
     toast({
       title: `${type} upload failed`,
@@ -79,7 +83,11 @@ const FileUpload = ({
     });
   };
 
-  const onSuccess = (res: any) => {
+  interface SuccessResponse {
+    filePath: string;
+  }
+
+  const onSuccess = (res: SuccessResponse) => {
     setFile(res);
     onFileChange(res.filePath);
 
@@ -143,7 +151,6 @@ const FileUpload = ({
           e.preventDefault();
 
           if (ikUploadRef.current) {
-            // @ts-ignore
             ikUploadRef.current?.click();
           }
         }}
