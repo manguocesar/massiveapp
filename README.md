@@ -1,6 +1,9 @@
 ## Getting Started
 
-First, run the development server:
+First, install packages:
+npm or yarn or pnpm install
+
+Then run the app with
 
 ```bash
 npm run dev
@@ -10,4 +13,4 @@ npx drizzle-kit migrate    --- apply the sql commands to create/change the db
 
 
 ## Authentification
-Auth can be set up with adapters or custom setups
+Any ID info can be uploaded for now
