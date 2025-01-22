@@ -36,13 +36,14 @@ const Home = async () => {
 
   return (
     <>
-      <BookOverview {...sampleBooks[oneToSixInt]}
-      // {...latestBooks[0]}
+      <BookOverview 
+      // {...sampleBooks[oneToSixInt]}
+       {...latestBooks[0]}
       userId={session?.user?.id as string} />
 
       <BookList
         title="Latest Books"
-        books={shuffledBooks}
+        books={latestBooks.slice(1)}
         containerClassName="mt-28"
       />
     </>

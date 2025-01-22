@@ -45,15 +45,7 @@ const BookCover = ({
         className="absolute z-10"
         style={{ left: "12%", width: "87.5%", height: "86%" }}
       >
-        <Image 
-          src={coverImage}
-          alt="Book cover"
-          fill
-          className="rounded-sm object-fill"
-          loading="lazy"
-          />
-
-        {/* <IKImage
+        <IKImage
           priority
           path={coverImage}
           urlEndpoint={config.env.imagekit.urlEndpoint}
@@ -62,7 +54,7 @@ const BookCover = ({
           className="rounded-sm object-fill"
           loading="lazy"
           lqip={{ active: true }}
-        /> */}
+        />
       </div>
     </div>
   );
