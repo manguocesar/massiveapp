@@ -48,7 +48,20 @@ const BookForm = ({ type, ...book }: Props) => {
     const onSubmit = async (values: z.infer<typeof bookSchema>) => {
         const result = await createBook(values);
 
-      
+        if (result.success) {
+            toast({
+                title: "Success",
+                description: "Book created successfully",
+            });
+
+            router.push(`/admin/books/${result.data.id}`);
+        } else {
+            toast({
+                title: "Error",
+                description: result.message,
+                variant: "destructive",
+            });
+        }
     };
 
     return (

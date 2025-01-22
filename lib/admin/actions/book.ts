@@ -12,14 +12,14 @@ export const createBook = async (params: BookParams) => {
     .returning() // returning means we want to get back the value that was just created in the database
 
     return {
-      succes: true,
+      success: true,
       data: JSON.parse(JSON.stringify(newBook[0])),
     };
 
   } catch (error) {
     console.log(error);
     return {
-      succes: false,
+      success: false,
       message: "An error ocurred creating the book",
     };
   }
