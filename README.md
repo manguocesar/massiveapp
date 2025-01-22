@@ -21,3 +21,8 @@ Email workflow handled with https://resend.com/ & https://upstash.com/
 info@cesar.com email domain is handled with GoDaddy
 Deployment & Psql database hosted on Vercel & Neon
 Image & video upload are managed through imagekit https://imagekit.io/
+
+## Next steps
+1. Update email template
+2. Update email workflow
+3. Add pages to Admin part
