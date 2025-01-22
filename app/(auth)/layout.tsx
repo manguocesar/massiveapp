@@ -4,9 +4,9 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
 const Layout = async ({ children }: { children: ReactNode }) => {
-  // const session = await auth();
+  const session = await auth();
 
-  // if (session) redirect("/");
+  if (session) redirect("/");
 
   return (
     <main className="auth-container">
@@ -16,11 +16,9 @@ const Layout = async ({ children }: { children: ReactNode }) => {
             <Image src="/icons/logo.svg" alt="logo" width={37} height={37} />
             <h1 className="text-2xl font-semibold text-white">BookWise</h1>
           </div>
-
           <div>{children}</div>
         </div>
       </section>
-
       <section className="auth-illustration">
         <Image
           src="/images/auth-illustration.png"
