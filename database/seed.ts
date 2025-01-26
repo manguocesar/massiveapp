@@ -9,11 +9,9 @@ config({ path: ".env.local" });
 
 const sql = neon(process.env.DATABASE_URL!);
 
-// because that file is a standalone script, we need to create a new instance of drizzle
 export const db = drizzle({ client: sql });
 
 const imagekit = new ImageKit({
-  // To expose an environment variable to the browser, it must be prefixed with NEXT_PUBLIC_
   publicKey: process.env.NEXT_PUBLIC_IMAGEKIT_PUBLIC_KEY!,
   urlEndpoint: process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT!,
   privateKey: process.env.IMAGEKIT_PRIVATE_KEY!,
