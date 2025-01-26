@@ -25,6 +25,7 @@ Any ID info can be uploaded for signup at the moment
 - UI with [Figma](https://www.figma.com/design/DHmtXXDVTCaAYVWUgwYRvd/Library-Management-System?t=vJwUtROK3hb9vECg-0) <br>
 
 ## Next steps
+0 . tst -- cookie Next/Header
 1. Update email template
 2. Update email workflow
 3. Add pages to Admin part:
