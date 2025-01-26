@@ -5,7 +5,7 @@ import { db } from "@/database/drizzle";
 import { books } from "@/database/schema";
 import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
-import { auth } from "@/auth";
+import { auth } from "@/app/api/auth/[...nextauth]/route";
 import BookOverview from "@/components/BookOverview";
 import BookVideo from "@/components/BookVideo";
 

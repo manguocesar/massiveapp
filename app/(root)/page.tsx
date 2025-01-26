@@ -1,8 +1,10 @@
+'use server';
+
 import BookList from "@/components/BookList";
 import BookOverview from "@/components/BookOverview";
 import { db } from "@/database/drizzle";
 import { books } from "@/database/schema";
-import { auth } from "@/auth";
+import { auth } from "@/app/api/auth/[...nextauth]/route";
 import { desc } from "drizzle-orm";
 import React from "react";
 
@@ -18,10 +20,8 @@ const Home = async () => {
   return (
     <>
       <BookOverview 
-      // {...sampleBooks[oneToSixInt]}
        {...latestBooks[0]}
       userId={session?.user?.id as string} />
-
       <BookList
         title="Latest Books"
         books={latestBooks.slice(1)}

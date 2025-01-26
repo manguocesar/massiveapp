@@ -1,4 +1,4 @@
-import { auth } from '@/auth';
+import { auth } from '@/app/api/auth/[...nextauth]/route';
 import Header from '@/components/Header'
 import { db } from '@/database/drizzle';
 import { eq } from 'drizzle-orm';
@@ -32,7 +32,7 @@ async function Layout({ children }: { children: ReactNode }) {
     return (
         <main className='root-container'>
             <div className='mx-auto max-w-7xl'>
-                <Header session={session} />
+                <Header />
                 <div className='mt-20 pb-20'>
                     {children}
                 </div>

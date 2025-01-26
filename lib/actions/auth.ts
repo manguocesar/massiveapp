@@ -5,7 +5,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
 import { hash } from "bcryptjs";
-import { signIn } from "@/auth";
+import { signIn } from "@/app/api/auth/[...nextauth]/route";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import config from "@/lib/config";

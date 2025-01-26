@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { auth } from "@/auth";
+import { auth } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 
 import "@/styles/admin.css";
