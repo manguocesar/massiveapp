@@ -51,8 +51,8 @@ const BookCover = ({
           alt="Book cover"
           fill
           className="rounded-sm object-fill"
-          loading="lazy"
-          lqip={{ active: true }}
+          loading="eager"
+          lqip={null}
         />
       </div>
     </div>

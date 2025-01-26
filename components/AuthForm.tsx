@@ -98,6 +98,7 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
                       />
                     ) : (
                       <Input
+                        autoComplete='current-password'
                         required
                         type={
                           FIELD_TYPES[field.name as keyof typeof FIELD_TYPES]

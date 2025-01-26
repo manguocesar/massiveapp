@@ -6,9 +6,9 @@ import { db } from "@/database/drizzle";
 import { users } from "@/database/schema";
 import { eq } from "drizzle-orm";
 
- interface Props extends Book {
-   userId: string;
- }
+interface Props extends Book {
+  userId: string;
+}
 const BookOverview = async ({
   title,
   author,
@@ -36,7 +36,6 @@ const BookOverview = async ({
         : "You are not eligible to borrow this book",
   };
 
-
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
@@ -52,7 +51,10 @@ const BookOverview = async ({
           </p>
 
           <div className="flex flex-row gap-1">
-            <Image src="/icons/star.svg" alt="star" width={22} height={22} />
+            <Image src="/icons/star.svg" alt="star" width="0"
+              height="0"
+              sizes="100vw"
+              className="w-full h-auto" />
             <p>{rating}</p>
           </div>
         </div>
@@ -74,7 +76,7 @@ const BookOverview = async ({
             bookId={id}
             userId={userId}
             borrowingEligibility={borrowingEligibility}
-          /> 
+          />
         )}
       </div>
 
@@ -86,13 +88,11 @@ const BookOverview = async ({
             coverColor={coverColor}
             coverImage={coverUrl}
           />
-
           <div className="absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden">
             <BookCover
               variant="wide"
               coverColor={coverColor}
               coverImage={coverUrl}
-              // coverImage='https://m.media-amazon.com/images/I/81F90H7hnML.jpg'  2nd book in the list
             />
           </div>
         </div>
