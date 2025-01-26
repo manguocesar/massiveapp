@@ -14,15 +14,15 @@ npx drizzle-kit migrate    --- apply the sql commands to create/change the db
 ```
 
 ## Authentification
-Any ID info can be uploaded for now
+Any ID info can be uploaded for signup at the moment
 
 ## Miscelleanous
-Prod [url] (https://massiveapp.vercel.app/)
-Email workflow handled with [Resend] (https://resend.com/) & [Upstash] (https://upstash.com/)
-info@cesar.com email domain is handled with [GoDaddy] (https://www.godaddy.com/en-uk)
-Deployment & Psql database hosted on Vercel & [Neon] : (https://console.neon.tech/app)
-Image & video upload are managed through [imagekit] (https://imagekit.io/)
-[Figma] (https://www.figma.com/design/DHmtXXDVTCaAYVWUgwYRvd/Library-Management-System?t=vJwUtROK3hb9vECg-0)
+Prod [URL](https://massiveapp.vercel.app/)
+Email workflow handled with [Resend](https://resend.com/) & [Upstash](https://upstash.com/)
+info@cesar.com email domain is handled with [GoDaddy](https://www.godaddy.com/en-uk)
+Deployment & Psql database hosted on Vercel & [Neon](https://console.neon.tech/app)
+Image & video upload are managed through [imagekit](https://imagekit.io/)
+UI with [Figma](https://www.figma.com/design/DHmtXXDVTCaAYVWUgwYRvd/Library-Management-System?t=vJwUtROK3hb9vECg-0)
 
 ## Next steps
 1. Update email template
