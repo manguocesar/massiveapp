@@ -23,10 +23,13 @@ const Sidebar = ({ session }: { session: Session }) => {
           />
           <h1>BookWise</h1>
         </div>
+        <Link href="/">
+          <h3 className="font-bold text-xl">Back to books section</h3>
+        </Link>
 
         <div className="mt-10 flex flex-col gap-5">
           {adminSideBarLinks.map((link) => {
-            
+
             const isSelected =
               (link.route !== "/admin" &&
                 pathname.includes(link.route) &&
